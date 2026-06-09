@@ -92,45 +92,40 @@ public class EmprestimosController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("UsuarioId,LivroId")] Emprestimo emprestimo)
     {
-        // Carrega entidades relacionadas para validação
+        // Remove validações automáticas dos campos preenchidos pelo servidor
+        ModelState.Remove("DataEmprestimo");
+        ModelState.Remove("DataPrevistaDevolucao");
+        ModelState.Remove("Status");
+        ModelState.Remove("Usuario");
+        ModelState.Remove("Livro");
+
         var usuario = await _context.Usuarios.FindAsync(emprestimo.UsuarioId);
         var livro = await _context.Livros.FindAsync(emprestimo.LivroId);
 
-        // ── Validação: usuário existe e está ativo ───────────────────────────
         if (usuario == null || usuario.Status != StatusUsuario.Ativo)
-        {
             ModelState.AddModelError("UsuarioId", "Usuário não encontrado ou inativo.");
-        }
 
-        // ── Validação: livro existe e tem estoque ────────────────────────────
         if (livro == null || livro.QuantidadeEstoque <= 0)
-        {
             ModelState.AddModelError("LivroId", "Livro não disponível em estoque.");
-        }
 
-        // ── Validação: faixa etária ──────────────────────────────────────────
         if (usuario != null && livro != null)
         {
             int idadeUsuario = CalcularIdade(usuario.DataNascimento);
             int faixaMinima = (int)livro.FaixaEtariaPermitida;
 
             if (idadeUsuario < faixaMinima)
-            {
                 ModelState.AddModelError("LivroId",
                     $"Usuário não tem idade mínima para este livro (mínimo {faixaMinima} anos).");
-            }
         }
 
         if (ModelState.IsValid)
         {
-            // Preenche campos automáticos
             emprestimo.DataEmprestimo = DateTime.Now;
             emprestimo.DataPrevistaDevolucao = DateTime.Now.AddDays(PrazoDevolucaoDias);
             emprestimo.Status = StatusEmprestimo.Emprestado;
             emprestimo.Multa = 0;
             emprestimo.DataRealDevolucao = null;
 
-            // Decrementa estoque
             livro!.QuantidadeEstoque--;
             _context.Update(livro);
 
@@ -141,7 +136,6 @@ public class EmprestimosController : Controller
             return RedirectToAction(nameof(Index));
         }
 
-        // Recarrega dropdowns em caso de erro
         ViewBag.Usuarios = new SelectList(
             _context.Usuarios.Where(u => u.Status == StatusUsuario.Ativo),
             "Id", "NomeCompleto", emprestimo.UsuarioId);

@@ -186,14 +186,13 @@ public class LivrosController : Controller
         if (livro == null)
             return NotFound();
 
-        // Bloqueia se tiver empréstimos ativos
-        int emprestimosAtivos = await _context.Emprestimos
-            .CountAsync(e => e.LivroId == id &&
-                             e.Status != StatusEmprestimo.Devolvido);
+        // Bloqueia se tiver QUALQUER empréstimo vinculado (ativo ou não)
+        int emprestimosVinculados = await _context.Emprestimos
+            .CountAsync(e => e.LivroId == id);
 
-        if (emprestimosAtivos > 0)
+        if (emprestimosVinculados > 0)
         {
-            TempData["Erro"] = $"Não é possível excluir \"{livro.NomeLivro}\" pois há {emprestimosAtivos} empréstimo(s) ativo(s).";
+            TempData["Erro"] = $"Não é possível excluir \"{livro.NomeLivro}\" pois há {emprestimosVinculados} empréstimo(s) vinculado(s) ao histórico.";
             return RedirectToAction(nameof(Index));
         }
 

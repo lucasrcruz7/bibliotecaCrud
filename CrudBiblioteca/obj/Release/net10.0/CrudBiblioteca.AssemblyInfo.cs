@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudBiblioteca")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+154d6a21d16be40f08cb7573680baa6df174d44a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2bad7883227aae7df0801f933194ab0b7943efb")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudBiblioteca")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudBiblioteca")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

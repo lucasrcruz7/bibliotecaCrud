@@ -1,8 +1,152 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="mb-0">📊 Dashboard</h2>
+        <p class="text-muted mb-0">
+            Bem-vindo, <strong>@Context.Session.GetString("UsuarioNome")</strong>!
+        </p>
+    </div>
+    <a asp-controller="Emprestimos" asp-action="Create" class="btn btn-primary">
+        + Novo Empréstimo
+    </a>
+</div>
+
+@* Cards de resumo *@
+<div class="row g-3 mb-4">
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 bg-primary text-white h-100">
+            <div class="card-body">
+                <div class="fs-1 fw-bold">@ViewBag.TotalLivros</div>
+                <div>📖 Livros cadastrados</div>
+                <div class="small opacity-75">@ViewBag.LivrosDisponiveis disponíveis</div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a asp-controller="Livros" asp-action="Index" class="text-white small">Ver todos →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 bg-success text-white h-100">
+            <div class="card-body">
+                <div class="fs-1 fw-bold">@ViewBag.TotalUsuarios</div>
+                <div>👤 Usuários</div>
+                <div class="small opacity-75">@ViewBag.UsuariosAtivos ativos</div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a asp-controller="Usuarios" asp-action="Index" class="text-white small">Ver todos →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 bg-warning text-dark h-100">
+            <div class="card-body">
+                <div class="fs-1 fw-bold">@ViewBag.EmprestimosAtivos</div>
+                <div>🔄 Em andamento</div>
+                <div class="small opacity-75">de @ViewBag.TotalEmprestimos totais</div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a asp-controller="Emprestimos" asp-action="Index" asp-route-status="1" class="text-dark small">Ver ativos →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-3">
+        <div class="card border-0 bg-danger text-white h-100">
+            <div class="card-body">
+                <div class="fs-1 fw-bold">@ViewBag.EmprestimosAtrasados</div>
+                <div>⚠️ Atrasados</div>
+                <div class="small opacity-75">requerem atenção</div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+                <a asp-controller="Emprestimos" asp-action="Index" asp-route-status="3" class="text-white small">Ver atrasados →</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@* Atalhos rápidos *@
+<div class="row g-3 mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header fw-semibold">⚡ Ações rápidas</div>
+            <div class="card-body d-flex flex-wrap gap-2">
+                <a asp-controller="Emprestimos" asp-action="Create"  class="btn btn-outline-primary">+ Empréstimo</a>
+                <a asp-controller="Livros"      asp-action="Create"  class="btn btn-outline-success">+ Livro</a>
+                <a asp-controller="Usuarios"    asp-action="Create"  class="btn btn-outline-secondary">+ Usuário</a>
+                <a asp-controller="Emprestimos" asp-action="Index"   class="btn btn-outline-warning">Ver empréstimos</a>
+                <a asp-controller="Livros"      asp-action="Index"   class="btn btn-outline-info">Ver acervo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Últimos empréstimos *@
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center fw-semibold">
+        🕐 Últimos Empréstimos
+        <a asp-controller="Emprestimos" asp-action="Index" class="btn btn-sm btn-outline-secondary">Ver todos</a>
+    </div>
+    <div class="card-body p-0">
+        @{
+            var ultimos = ViewBag.UltimosEmprestimos as IEnumerable<CrudBiblioteca.Models.Emprestimo>;
+        }
+        @if (ultimos == null || !ultimos.Any())
+        {
+            <p class="text-muted p-3 mb-0">Nenhum empréstimo registrado ainda.</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Livro</th>
+                            <th>Data</th>
+                            <th>Prev. Devolução</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var e in ultimos)
+                        {
+                            <tr>
+                                <td>@e.Usuario.NomeCompleto</td>
+                                <td>@e.Livro.NomeLivro</td>
+                                <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                                <td>@e.DataPrevistaDevolucao.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    @switch (e.Status)
+                                    {
+                                        case CrudBiblioteca.Models.StatusEmprestimo.Emprestado:
+                                            <span class="badge bg-primary">Emprestado</span>
+                                            break;
+                                        case CrudBiblioteca.Models.StatusEmprestimo.Devolvido:
+                                            <span class="badge bg-success">Devolvido</span>
+                                            break;
+                                        case CrudBiblioteca.Models.StatusEmprestimo.Atrasado:
+                                            <span class="badge bg-danger">Atrasado</span>
+                                            break;
+                                    }
+                                </td>
+                                <td>
+                                    <a asp-controller="Emprestimos" asp-action="Details"
+                                       asp-route-id="@e.Id"
+                                       class="btn btn-sm btn-outline-info">Ver</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
 </div>
