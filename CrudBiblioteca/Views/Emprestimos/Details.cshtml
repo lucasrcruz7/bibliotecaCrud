@@ -1,0 +1,98 @@
+@model CrudBiblioteca.Models.Emprestimo
+
+@{
+    ViewData["Title"] = "Detalhes do Empréstimo";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">🔍 Empréstimo #@Model.Id</h4>
+                @switch (Model.Status)
+                {
+                    case CrudBiblioteca.Models.StatusEmprestimo.Emprestado:
+                        <span class="badge bg-primary fs-6">Emprestado</span>
+                        break;
+                    case CrudBiblioteca.Models.StatusEmprestimo.Devolvido:
+                        <span class="badge bg-success fs-6">Devolvido</span>
+                        break;
+                    case CrudBiblioteca.Models.StatusEmprestimo.Atrasado:
+                        <span class="badge bg-danger fs-6">Atrasado</span>
+                        break;
+                }
+            </div>
+            <div class="card-body">
+
+                <h5 class="text-muted mb-3">👤 Usuário</h5>
+                <dl class="row mb-4">
+                    <dt class="col-sm-4">Nome</dt>
+                    <dd class="col-sm-8">@Model.Usuario.NomeCompleto</dd>
+
+                    <dt class="col-sm-4">E-mail</dt>
+                    <dd class="col-sm-8">@Model.Usuario.Email</dd>
+                </dl>
+
+                <hr />
+
+                <h5 class="text-muted mb-3">📖 Livro</h5>
+                <dl class="row mb-4">
+                    <dt class="col-sm-4">Título</dt>
+                    <dd class="col-sm-8">@Model.Livro.NomeLivro</dd>
+
+                    <dt class="col-sm-4">Autor</dt>
+                    <dd class="col-sm-8">@Model.Livro.Autor</dd>
+
+                    <dt class="col-sm-4">Categoria</dt>
+                    <dd class="col-sm-8">@Model.Livro.Categoria</dd>
+                </dl>
+
+                <hr />
+
+                <h5 class="text-muted mb-3">📅 Datas</h5>
+                <dl class="row mb-4">
+                    <dt class="col-sm-4">Data do Empréstimo</dt>
+                    <dd class="col-sm-8">@Model.DataEmprestimo.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-4">Prev. Devolução</dt>
+                    <dd class="col-sm-8">@Model.DataPrevistaDevolucao.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-4">Devolução Real</dt>
+                    <dd class="col-sm-8">
+                        @(Model.DataRealDevolucao.HasValue
+                            ? Model.DataRealDevolucao.Value.ToString("dd/MM/yyyy")
+                            : "Não devolvido ainda")
+                    </dd>
+                </dl>
+
+                <hr />
+
+                <h5 class="text-muted mb-3">💰 Multa</h5>
+                <dl class="row">
+                    <dt class="col-sm-4">Valor da Multa</dt>
+                    <dd class="col-sm-8">
+                        @if (Model.Multa > 0)
+                        {
+                            <span class="text-danger fw-bold fs-5">R$ @Model.Multa.ToString("F2")</span>
+                        }
+                        else
+                        {
+                            <span class="text-success">Sem multa</span>
+                        }
+                    </dd>
+                </dl>
+
+            </div>
+            <div class="card-footer d-flex gap-2">
+                @if (Model.Status != CrudBiblioteca.Models.StatusEmprestimo.Devolvido)
+                {
+                    <a asp-action="Devolver" asp-route-id="@Model.Id"
+                       class="btn btn-warning">Registrar Devolução</a>
+                }
+                <a asp-action="Index" class="btn btn-outline-secondary">Voltar</a>
+            </div>
+        </div>
+
+    </div>
+</div>

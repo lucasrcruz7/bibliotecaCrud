@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\CrudBiblioteca.csproj": {}
+    "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\CrudBiblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\CrudBiblioteca.csproj": {
+    "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\CrudBiblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\CrudBiblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\CrudBiblioteca.csproj",
         "projectName": "CrudBiblioteca",
-        "projectPath": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\CrudBiblioteca.csproj",
-        "packagesPath": "C:\\Users\\Aluno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\CrudBiblioteca.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aluno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -44,12 +45,17 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -72,11 +78,11 @@
             },
             "NuGet.Packaging": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.6.0, )"
             },
             "NuGet.Protocol": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.6.0, )"
             }
           },
           "imports": [
@@ -98,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

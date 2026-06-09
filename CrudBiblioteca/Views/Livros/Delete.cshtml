@@ -1,0 +1,60 @@
+@model CrudBiblioteca.Models.Livro
+
+@{
+    ViewData["Title"] = "Excluir Livro";
+    int emprestimosAtivos = (int)ViewBag.EmprestimosAtivos;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">🗑️ Excluir Livro</h4>
+            </div>
+            <div class="card-body">
+
+                @if (emprestimosAtivos > 0)
+                {
+                    <div class="alert alert-warning">
+                        <strong>⚠️ Atenção!</strong> Este livro possui
+                        <strong>@emprestimosAtivos empréstimo(s) ativo(s)</strong>
+                        e não pode ser excluído até que todos sejam devolvidos.
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                        Tem certeza que deseja excluir este livro? Esta ação não pode ser desfeita.
+                    </div>
+                }
+
+                <dl class="row">
+                    <dt class="col-sm-4">Título</dt>
+                    <dd class="col-sm-8 fw-bold">@Model.NomeLivro</dd>
+
+                    <dt class="col-sm-4">Autor</dt>
+                    <dd class="col-sm-8">@Model.Autor</dd>
+
+                    <dt class="col-sm-4">Categoria</dt>
+                    <dd class="col-sm-8">@Model.Categoria</dd>
+
+                    <dt class="col-sm-4">Estoque</dt>
+                    <dd class="col-sm-8">@Model.QuantidadeEstoque unidade(s)</dd>
+                </dl>
+
+                <div class="d-flex gap-2 mt-3">
+                    @if (emprestimosAtivos == 0)
+                    {
+                        <form asp-action="Delete" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                        </form>
+                    }
+                    <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

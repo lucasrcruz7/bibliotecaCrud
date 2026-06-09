@@ -10,7 +10,6 @@ namespace CrudBiblioteca.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Emprestimo> Emprestimos { get; set; }
-        public DbSet<VendaLivro> VendasLivros { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -106,33 +105,6 @@ namespace CrudBiblioteca.Data
                 entity.HasOne(e => e.Livro)
                       .WithMany()
                       .HasForeignKey(e => e.LivroId)
-                      .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            // ── VendaLivro ───────────────────────────────────────────────────
-            modelBuilder.Entity<VendaLivro>(entity =>
-            {
-                entity.ToTable("VendasLivros");
-                entity.HasKey(v => v.Id);
-
-                entity.Property(v => v.DataVenda)
-                      .IsRequired();
-
-                entity.Property(v => v.Quantidade)
-                      .IsRequired();
-
-                entity.Property(v => v.ValorTotal)
-                      .HasColumnType("decimal(10,2)")
-                      .IsRequired();
-
-                entity.HasOne(v => v.Usuario)
-                      .WithMany()
-                      .HasForeignKey(v => v.UsuarioId)
-                      .OnDelete(DeleteBehavior.Restrict);
-
-                entity.HasOne(v => v.Livro)
-                      .WithMany()
-                      .HasForeignKey(v => v.LivroId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
         }

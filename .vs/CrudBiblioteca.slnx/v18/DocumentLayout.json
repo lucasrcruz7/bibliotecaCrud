@@ -1,38 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\",
+  "WorkspaceRootPath": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\models\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\controllers\\empretimoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\controllers\\empretimoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\models\\vendalivro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\vendalivro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\models\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\emprestimo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\aluno\\downloads\\crudbiblioteca\\crudbiblioteca\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{25384BCF-30CB-483B-ADF0-28A304B984EF}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\livro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|c:\\users\\lucas\\desktop\\bibliotecacrud\\crudbiblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A81C48D9-5912-0BD1-6E6E-7D62B9472698}|CrudBiblioteca\\CrudBiblioteca.csproj|solutionrelative:crudbiblioteca\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,107 +62,141 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Emprestimo.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\Emprestimo.cs",
-              "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\Emprestimo.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\Emprestimo.cs",
-              "RelativeToolTip": "CrudBiblioteca\\Models\\Emprestimo.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAuwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T14:34:20.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Livro.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\Livro.cs",
-              "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\Livro.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\Livro.cs",
-              "RelativeToolTip": "CrudBiblioteca\\Models\\Livro.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAxwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T14:31:10.071Z",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Views\\Usuarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "CrudBiblioteca\\Views\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Views\\Usuarios\\Create.cshtml",
+              "RelativeToolTip": "CrudBiblioteca\\Views\\Usuarios\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-09T00:54:07.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "EmpretimosController.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Controllers\\EmpretimosController.cs",
+              "RelativeDocumentMoniker": "CrudBiblioteca\\Controllers\\EmpretimosController.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Controllers\\EmpretimosController.cs",
+              "RelativeToolTip": "CrudBiblioteca\\Controllers\\EmpretimosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T00:27:17.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "CrudBiblioteca\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "CrudBiblioteca\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAYwLkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T00:17:55.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CrudBiblioteca\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CrudBiblioteca\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T22:31:52.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Emprestimo.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\Emprestimo.cs",
+              "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\Emprestimo.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\Emprestimo.cs",
+              "RelativeToolTip": "CrudBiblioteca\\Models\\Emprestimo.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T14:34:20.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Livro.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\Livro.cs",
+              "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\Livro.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\Livro.cs",
+              "RelativeToolTip": "CrudBiblioteca\\Models\\Livro.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAxwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-08T14:31:10.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Data\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "CrudBiblioteca\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Data\\AppDbContext.cs",
               "RelativeToolTip": "CrudBiblioteca\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAUwG8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-08T14:51:30.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VendaLivro.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\VendaLivro.cs",
-              "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\VendaLivro.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\VendaLivro.cs",
-              "RelativeToolTip": "CrudBiblioteca\\Models\\VendaLivro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T14:59:02.116Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Program.cs",
               "RelativeDocumentMoniker": "CrudBiblioteca\\Program.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Program.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Program.cs",
               "RelativeToolTip": "CrudBiblioteca\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-08T14:50:18.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\appsettings.json",
               "RelativeDocumentMoniker": "CrudBiblioteca\\appsettings.json",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\appsettings.json",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\appsettings.json",
               "RelativeToolTip": "CrudBiblioteca\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-08T14:50:04.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-08T14:50:04.274Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\Usuario.cs",
               "RelativeToolTip": "CrudBiblioteca\\Models\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T14:27:28.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-08T14:27:28.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "CrudBiblioteca\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\Aluno\\Downloads\\CrudBiblioteca\\CrudBiblioteca\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\lucas\\Desktop\\bibliotecaCrud\\CrudBiblioteca\\Models\\ErrorViewModel.cs",
               "RelativeToolTip": "CrudBiblioteca\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T15:03:27.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-08T15:03:27.581Z"
             }
           ]
         }

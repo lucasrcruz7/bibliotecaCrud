@@ -1,0 +1,128 @@
+@model IEnumerable<CrudBiblioteca.Models.Emprestimo>
+
+@{
+    ViewData["Title"] = "Histórico do Usuário";
+    var usuario = (CrudBiblioteca.Models.Usuario)ViewBag.Usuario;
+
+    int total      = Model.Count();
+    int ativos     = Model.Count(e => e.Status == CrudBiblioteca.Models.StatusEmprestimo.Emprestado);
+    int atrasados  = Model.Count(e => e.Status == CrudBiblioteca.Models.StatusEmprestimo.Atrasado);
+    int devolvidos = Model.Count(e => e.Status == CrudBiblioteca.Models.StatusEmprestimo.Devolvido);
+    decimal totalMultas = Model.Sum(e => e.Multa);
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+        <h2 class="mb-0">📋 Histórico de Empréstimos</h2>
+        <p class="text-muted mb-0">@usuario.NomeCompleto — @usuario.Email</p>
+    </div>
+    <a asp-action="Index" class="btn btn-outline-secondary">← Voltar</a>
+</div>
+
+@* Cards de resumo *@
+<div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-secondary">
+            <div class="card-body py-2">
+                <div class="fs-3 fw-bold">@total</div>
+                <div class="text-muted small">Total</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-primary">
+            <div class="card-body py-2">
+                <div class="fs-3 fw-bold text-primary">@ativos</div>
+                <div class="text-muted small">Em aberto</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-danger">
+            <div class="card-body py-2">
+                <div class="fs-3 fw-bold text-danger">@atrasados</div>
+                <div class="text-muted small">Atrasados</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-md-3">
+        <div class="card text-center border-warning">
+            <div class="card-body py-2">
+                <div class="fs-3 fw-bold text-warning">R$ @totalMultas.ToString("F2")</div>
+                <div class="text-muted small">Total em Multas</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Tabela do histórico *@
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Este usuário não possui empréstimos registrados.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Livro</th>
+                    <th>Empréstimo</th>
+                    <th>Prev. Devolução</th>
+                    <th>Devolução Real</th>
+                    <th>Multa</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model)
+                {
+                    <tr>
+                        <td>@e.Id</td>
+                        <td>
+                            <strong>@e.Livro.NomeLivro</strong>
+                            <div class="text-muted small">@e.Livro.Autor</div>
+                        </td>
+                        <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                        <td>@e.DataPrevistaDevolucao.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @(e.DataRealDevolucao.HasValue
+                                ? e.DataRealDevolucao.Value.ToString("dd/MM/yyyy")
+                                : "—")
+                        </td>
+                        <td>
+                            @if (e.Multa > 0)
+                            {
+                                <span class="text-danger fw-bold">R$ @e.Multa.ToString("F2")</span>
+                            }
+                            else
+                            {
+                                <span class="text-muted">—</span>
+                            }
+                        </td>
+                        <td>
+                            @switch (e.Status)
+                            {
+                                case CrudBiblioteca.Models.StatusEmprestimo.Emprestado:
+                                    <span class="badge bg-primary">Emprestado</span>
+                                    break;
+                                case CrudBiblioteca.Models.StatusEmprestimo.Devolvido:
+                                    <span class="badge bg-success">Devolvido</span>
+                                    break;
+                                case CrudBiblioteca.Models.StatusEmprestimo.Atrasado:
+                                    <span class="badge bg-danger">Atrasado</span>
+                                    break;
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@e.Id"
+                               class="btn btn-sm btn-outline-info">Ver</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

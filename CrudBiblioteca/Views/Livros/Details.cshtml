@@ -1,0 +1,81 @@
+@model CrudBiblioteca.Models.Livro
+
+@{
+    ViewData["Title"] = "Detalhes do Livro";
+    int emprestimosAtivos = (int)ViewBag.EmprestimosAtivos;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">🔍 Detalhes do Livro</h4>
+                @if (Model.QuantidadeEstoque == 0)
+                {
+                    <span class="badge bg-danger fs-6">Indisponível</span>
+                }
+                else if (Model.QuantidadeEstoque <= 2)
+                {
+                    <span class="badge bg-warning text-dark fs-6">Últimas unidades</span>
+                }
+                else
+                {
+                    <span class="badge bg-success fs-6">Disponível</span>
+                }
+            </div>
+            <div class="card-body">
+
+                <dl class="row">
+                    <dt class="col-sm-4">Título</dt>
+                    <dd class="col-sm-8 fw-bold">@Model.NomeLivro</dd>
+
+                    <dt class="col-sm-4">Autor</dt>
+                    <dd class="col-sm-8">@Model.Autor</dd>
+
+                    <dt class="col-sm-4">Categoria</dt>
+                    <dd class="col-sm-8">@Model.Categoria</dd>
+
+                    <dt class="col-sm-4">Ano de Publicação</dt>
+                    <dd class="col-sm-8">@Model.AnoPublicacao</dd>
+
+                    <dt class="col-sm-4">Faixa Etária</dt>
+                    <dd class="col-sm-8">
+                        @(Model.FaixaEtariaPermitida == CrudBiblioteca.Models.FaixaEtaria.Livre
+                            ? "Livre para todos"
+                            : $"A partir de {(int)Model.FaixaEtariaPermitida} anos")
+                    </dd>
+                </dl>
+
+                <hr />
+
+                <h5 class="text-muted mb-3">📦 Disponibilidade</h5>
+                <dl class="row">
+                    <dt class="col-sm-4">Qtd. em Estoque</dt>
+                    <dd class="col-sm-8">
+                        <span class="fs-5 fw-bold @(Model.QuantidadeEstoque == 0 ? "text-danger" : "text-success")">
+                            @Model.QuantidadeEstoque unidade(s)
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-4">Empréstimos Ativos</dt>
+                    <dd class="col-sm-8">
+                        @if (emprestimosAtivos > 0)
+                        {
+                            <span class="text-warning fw-bold">@emprestimosAtivos em aberto</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Nenhum</span>
+                        }
+                    </dd>
+                </dl>
+
+            </div>
+            <div class="card-footer d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">Excluir</a>
+                <a asp-action="Index" class="btn btn-outline-secondary ms-auto">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>

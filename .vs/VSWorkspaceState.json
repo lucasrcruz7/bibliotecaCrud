@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CrudBiblioteca",
+    "\\CrudBiblioteca\\Data",
+    "\\CrudBiblioteca\\Models"
+  ],
+  "SelectedNode": "\\CrudBiblioteca\\Data\\AppDbContext.cs",
+  "PreviewInSolutionExplorer": false
+}

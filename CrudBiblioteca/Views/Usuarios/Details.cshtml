@@ -1,0 +1,84 @@
+@model CrudBiblioteca.Models.Usuario
+
+@{
+    ViewData["Title"] = "Detalhes do Usuário";
+    int totalEmprestimos  = (int)ViewBag.TotalEmprestimos;
+    int emprestimosAtivos = (int)ViewBag.EmprestimosAtivos;
+    decimal totalMultas   = (decimal)ViewBag.TotalMultas;
+
+    int idade = DateTime.Today.Year - Model.DataNascimento.Year;
+    if (Model.DataNascimento.Date > DateTime.Today.AddYears(-idade)) idade--;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">🔍 Detalhes do Usuário</h4>
+                @if (Model.Status == CrudBiblioteca.Models.StatusUsuario.Ativo)
+                {
+                    <span class="badge bg-success fs-6">Ativo</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary fs-6">Inativo</span>
+                }
+            </div>
+            <div class="card-body">
+
+                <h5 class="text-muted mb-3">👤 Dados Pessoais</h5>
+                <dl class="row mb-4">
+                    <dt class="col-sm-4">Nome Completo</dt>
+                    <dd class="col-sm-8 fw-bold">@Model.NomeCompleto</dd>
+
+                    <dt class="col-sm-4">Data de Nascimento</dt>
+                    <dd class="col-sm-8">
+                        @Model.DataNascimento.ToString("dd/MM/yyyy")
+                        <span class="text-muted small">(@idade anos)</span>
+                    </dd>
+
+                    <dt class="col-sm-4">E-mail</dt>
+                    <dd class="col-sm-8">@Model.Email</dd>
+                </dl>
+
+                <hr />
+
+                <h5 class="text-muted mb-3">📋 Empréstimos</h5>
+                <div class="row g-3 mb-3">
+                    <div class="col-4">
+                        <div class="card text-center border-secondary">
+                            <div class="card-body py-2">
+                                <div class="fs-4 fw-bold">@totalEmprestimos</div>
+                                <div class="text-muted small">Total</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card text-center border-primary">
+                            <div class="card-body py-2">
+                                <div class="fs-4 fw-bold text-primary">@emprestimosAtivos</div>
+                                <div class="text-muted small">Em aberto</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card text-center border-warning">
+                            <div class="card-body py-2">
+                                <div class="fs-4 fw-bold text-warning">R$ @totalMultas.ToString("F2")</div>
+                                <div class="text-muted small">Em multas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+                <a asp-controller="Emprestimos" asp-action="Historico" asp-route-id="@Model.Id"
+                   class="btn btn-outline-info">Ver Histórico</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">Excluir</a>
+                <a asp-action="Index" class="btn btn-outline-secondary ms-auto">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>

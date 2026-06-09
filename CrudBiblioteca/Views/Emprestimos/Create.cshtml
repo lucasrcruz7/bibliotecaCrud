@@ -1,0 +1,55 @@
+@model CrudBiblioteca.Models.Emprestimo
+
+@{
+    ViewData["Title"] = "Novo Empréstimo";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">📋 Registrar Empréstimo</h4>
+            </div>
+            <div class="card-body">
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="UsuarioId" class="form-label fw-semibold">Usuário</label>
+                        <select asp-for="UsuarioId" asp-items="ViewBag.Usuarios" class="form-select">
+                            <option value="">— Selecione o usuário —</option>
+                        </select>
+                        <span asp-validation-for="UsuarioId" class="text-danger small"></span>
+                        <div class="form-text">Apenas usuários ativos são exibidos.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="LivroId" class="form-label fw-semibold">Livro</label>
+                        <select asp-for="LivroId" asp-items="ViewBag.Livros" class="form-select">
+                            <option value="">— Selecione o livro —</option>
+                        </select>
+                        <span asp-validation-for="LivroId" class="text-danger small"></span>
+                        <div class="form-text">Apenas livros com estoque disponível são exibidos.</div>
+                    </div>
+
+                    <div class="alert alert-info small mb-3">
+                        📅 O prazo de devolução será de <strong>14 dias</strong> a partir de hoje.
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Registrar Empréstimo</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

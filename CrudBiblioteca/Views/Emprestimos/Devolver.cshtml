@@ -1,0 +1,76 @@
+@model CrudBiblioteca.Models.Emprestimo
+
+@{
+    ViewData["Title"] = "Registrar Devolução";
+    int diasAtraso = (int)ViewBag.DiasAtraso;
+    decimal multaPreview = (decimal)ViewBag.MultaPreview;
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="card shadow-sm border-warning">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0">📦 Registrar Devolução</h4>
+            </div>
+            <div class="card-body">
+
+                <dl class="row">
+                    <dt class="col-sm-5">Usuário</dt>
+                    <dd class="col-sm-7">@Model.Usuario.NomeCompleto</dd>
+
+                    <dt class="col-sm-5">Livro</dt>
+                    <dd class="col-sm-7">@Model.Livro.NomeLivro</dd>
+
+                    <dt class="col-sm-5">Data do Empréstimo</dt>
+                    <dd class="col-sm-7">@Model.DataEmprestimo.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-5">Prev. Devolução</dt>
+                    <dd class="col-sm-7">@Model.DataPrevistaDevolucao.ToString("dd/MM/yyyy")</dd>
+
+                    <dt class="col-sm-5">Data de Hoje</dt>
+                    <dd class="col-sm-7">@DateTime.Now.ToString("dd/MM/yyyy")</dd>
+                </dl>
+
+                <hr />
+
+                @* Preview do atraso/multa *@
+                @if (diasAtraso > 0)
+                {
+                    <div class="alert alert-danger">
+                        <h5 class="alert-heading">⚠️ Devolução em Atraso</h5>
+                        <p class="mb-1">
+                            <strong>Dias de atraso:</strong> @diasAtraso dia(s)
+                        </p>
+                        <p class="mb-0">
+                            <strong>Multa a cobrar:</strong>
+                            <span class="fs-5 fw-bold">R$ @multaPreview.ToString("F2")</span>
+                            <small class="text-muted">(R$ 1,00 por dia)</small>
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-success">
+                        ✅ <strong>Devolução no prazo!</strong> Nenhuma multa será aplicada.
+                    </div>
+                }
+
+                <p class="text-muted small">
+                    Ao confirmar, o livro voltará ao estoque e o empréstimo será encerrado.
+                </p>
+
+                <form asp-action="Devolver" method="post" class="d-flex gap-2">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-warning">
+                        Confirmar Devolução
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>

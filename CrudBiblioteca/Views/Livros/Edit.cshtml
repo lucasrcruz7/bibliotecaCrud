@@ -1,0 +1,72 @@
+@model CrudBiblioteca.Models.Livro
+
+@{
+    ViewData["Title"] = "Editar Livro";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-warning text-dark">
+                <h4 class="mb-0">✏️ Editar Livro</h4>
+            </div>
+            <div class="card-body">
+
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="mb-3">
+                        <label asp-for="NomeLivro" class="form-label fw-semibold">Título</label>
+                        <input asp-for="NomeLivro" class="form-control" />
+                        <span asp-validation-for="NomeLivro" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Autor" class="form-label fw-semibold">Autor</label>
+                        <input asp-for="Autor" class="form-control" />
+                        <span asp-validation-for="Autor" class="text-danger small"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label asp-for="AnoPublicacao" class="form-label fw-semibold">Ano de Publicação</label>
+                            <input asp-for="AnoPublicacao" class="form-control" type="number"
+                                   min="1000" max="@DateTime.Now.Year" />
+                            <span asp-validation-for="AnoPublicacao" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="QuantidadeEstoque" class="form-label fw-semibold">Qtd. em Estoque</label>
+                            <input asp-for="QuantidadeEstoque" class="form-control" type="number" min="0" />
+                            <span asp-validation-for="QuantidadeEstoque" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Categoria" class="form-label fw-semibold">Categoria</label>
+                        <input asp-for="Categoria" class="form-control" />
+                        <span asp-validation-for="Categoria" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="FaixaEtariaPermitida" class="form-label fw-semibold">Faixa Etária</label>
+                        <select asp-for="FaixaEtariaPermitida" class="form-select"
+                                asp-items="Html.GetEnumSelectList<CrudBiblioteca.Models.FaixaEtaria>()">
+                        </select>
+                        <span asp-validation-for="FaixaEtariaPermitida" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-warning">Salvar Alterações</button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

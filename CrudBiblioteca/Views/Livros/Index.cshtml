@@ -1,0 +1,117 @@
+@model IEnumerable<CrudBiblioteca.Models.Livro>
+
+@{
+    ViewData["Title"] = "Livros";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">📚 Livros</h2>
+    <a asp-action="Create" class="btn btn-primary">+ Novo Livro</a>
+</div>
+
+@* Mensagens de feedback *@
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Sucesso"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Erro"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@* Busca *@
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-2 align-items-end">
+            <div class="col-md-8">
+                <label class="form-label fw-semibold">Buscar livro</label>
+                <input type="text" name="busca" value="@ViewBag.Busca"
+                       class="form-control" placeholder="Título, autor ou categoria..." />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-secondary w-100">Buscar</button>
+            </div>
+            <div class="col-md-2">
+                <a asp-action="Index" class="btn btn-outline-secondary w-100">Limpar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@* Resultado da busca *@
+@if (!string.IsNullOrEmpty(ViewBag.Busca as string))
+{
+    <p class="text-muted">
+        @Model.Count() resultado(s) para "<strong>@ViewBag.Busca</strong>"
+    </p>
+}
+
+@* Tabela *@
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Nenhum livro encontrado.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Categoria</th>
+                    <th>Ano</th>
+                    <th>Faixa Etária</th>
+                    <th>Estoque</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var livro in Model)
+                {
+                    <tr>
+                        <td>@livro.Id</td>
+                        <td><strong>@livro.NomeLivro</strong></td>
+                        <td>@livro.Autor</td>
+                        <td>@livro.Categoria</td>
+                        <td>@livro.AnoPublicacao</td>
+                        <td>
+                            @(livro.FaixaEtariaPermitida == CrudBiblioteca.Models.FaixaEtaria.Livre
+                                ? "Livre"
+                                : $"{(int)livro.FaixaEtariaPermitida}+")
+                        </td>
+                        <td>
+                            @if (livro.QuantidadeEstoque == 0)
+                            {
+                                <span class="badge bg-danger">Indisponível</span>
+                            }
+                            else if (livro.QuantidadeEstoque <= 2)
+                            {
+                                <span class="badge bg-warning text-dark">@livro.QuantidadeEstoque un.</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">@livro.QuantidadeEstoque un.</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@livro.Id"
+                               class="btn btn-sm btn-outline-info">Detalhes</a>
+                            <a asp-action="Edit" asp-route-id="@livro.Id"
+                               class="btn btn-sm btn-outline-primary ms-1">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@livro.Id"
+                               class="btn btn-sm btn-outline-danger ms-1">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
